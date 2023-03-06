@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-const RemoveLogs = require('../src/index');
+const removeLogs = require("../src/index");
 
-RemoveLogs();
+removeLogs();
