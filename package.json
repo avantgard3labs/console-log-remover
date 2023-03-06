@@ -1,14 +1,24 @@
 {
   "name": "console-log-remover",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "This is an NPM package built to remove the ```console.log()``` present in the code just by exacuting a single command in the CLI",
+  "main": "./src/index.js",
   "bin": {
     "rmlogs": "./bin/console-log-remover"
   },
-  "keywords": [],
-  "author": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avantgard3labs/console-log-remover.git"
+  },
+  "author": "AvantGarde",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avantgard3labs/console-log-remover/issues"
+  },
+  "homepage": "https://github.com/avantgard3labs/console-log-remover#readme",
   "dependencies": {
     "fs": "^0.0.1-security",
     "glob": "^8.1.0"
