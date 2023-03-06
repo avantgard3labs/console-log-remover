@@ -24,4 +24,31 @@ function RemoveLogs() {
         const consoleLogIgnorerLines = consoleLogIgnorerData.split('\n').map(line => line.trim()).filter(line => !!line && !line.startsWith('#'));
         options.ignore.push(...consoleLogIgnorerLines);
     }
+    
+    glob('**/*.js', options, (err, files) => {
+        if (err) {
+          console.error(`Error globbing files: ${err}`);
+          return;
+        }
+    
+        for (const file of files) {
+          fs.readFile(file, 'utf8', (err, data) => {
+            if (err) {
+              console.error(`Error reading file ${file}: ${err}`);
+              return;
+            }
+    
+            const modifiedData = data.replace(regex, '');
+    
+            fs.writeFile(file, modifiedData, 'utf8', (err) => {
+              if (err) {
+                console.error(`Error writing file ${file}: ${err}`);
+                return;
+              }
+    
+              
+            });
+          });
+        }
+      });
 }
