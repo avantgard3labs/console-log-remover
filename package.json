@@ -1,6 +1,6 @@
 {
   "name": "console-log-remover",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "This is an NPM package built to remove the ```console.log()``` present in the code just by exacuting a single command in the CLI",
   "main": "./src/index.js",
   "bin": {
