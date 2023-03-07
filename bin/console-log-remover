@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-const removeLogs = require("../src/console-log-remover");
+const removeLogs = require("../src/main");
 
 removeLogs();
