@@ -22,3 +22,7 @@ rmlogs
 -   Does not remove `console.log()` from error staements
 -   Does not remove from all files and directories in .gitignore
 -   Also to ignore the `console.log()` present in certain files or folders create and add it to a file named .logignore
+
+## Demo
+
+![demo-gif](https://github.com/avantgard3labs/console-log-remover/raw/master/imgs/demo.gif)
