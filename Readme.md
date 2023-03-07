@@ -10,7 +10,7 @@ This is an NPM package built to remove the `console.log()` present in the code j
 npm i -g console-log-remover
 ```
 
-To run the log remover in any project, use:
+To use the log remover in any project, run:
 
 ```
 rmlogs
