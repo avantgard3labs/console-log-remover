@@ -1,7 +1,23 @@
 
 # Console-log-remover
 
+## Overview
+
 This is an NPM package built to remove the ```console.log()``` present in the code just by exacuting a single command in the CLI
+
+## Installation
+```
+npm i -g console-log-remover
+```
+
+To run the log remover in any project:
+``` 
+rmlogs
+```
+
+
+
+
 
 
 
@@ -10,10 +26,10 @@ This is an NPM package built to remove the ```console.log()``` present in the co
 
 ## Features
 
-- Removes the semicolon succeeding (If present)
-- Does not remove ```console.logs``` from error staements
+- Removes the succeeding semicolon (If present)
+- Does not remove ```console.log()``` from error staements
 - Does not remove from all files and directories in .gitignore
-- Also to ignore the ```console.logs``` present in certain files or folders add it to a file named .logignore
+- Also to ignore the ```console.log()``` present in certain files or folders create and add it to a file named .logignore
 
 
 
@@ -22,14 +38,14 @@ This is an NPM package built to remove the ```console.log()``` present in the co
 
 ## Deployment
 
-### Deploying it locally (global)
+### Deploying it locally from Github
 
 Clone this repo:
 ```
-  git clone https://github.com/Gathin23/console-log-remover.git
+  git clone https://github.com/avantgard3labs/console-log-remover.git
 ```
 
-Add dependencies:
+Install dependencies:
 ```
   npm i
 ```
