@@ -3,7 +3,7 @@
 
 ## Overview
 
-This is an NPM package built to remove the ```console.log()``` present in the code just by exacuting a single command in the CLI
+This is an NPM package built to remove the ```console.log()``` present in the code just by executing a single command in the CLI
 
 ## Installation
 ```
