@@ -1,6 +1,15 @@
 const fs = require("fs");
 const glob = require("glob");
 
+function parseIgnoreFile(filePath) {
+    const fileData = fs.readFileSync(filePath, "utf8");
+    const fileLines = fileData
+        .split("\n")
+        .map((line) => line.trim())
+        .filter((line) => !!line && !line.startsWith("#"));
+    return fileLines;
+}
+
 function removeLogs() {
     const regex =
         /(?<!error\s)\bconsole\.log\((?:[^)(]+|\((?:[^)(]+|\([^)(]*\))*\))*\)(?!\s*error)(;?)/g;
@@ -13,22 +22,14 @@ function removeLogs() {
     // Read the contents of the user's .gitignore file (if it exists)
     const gitignorePath = `${process.cwd()}/.gitignore`;
     if (fs.existsSync(gitignorePath)) {
-        const gitignoreData = fs.readFileSync(gitignorePath, "utf8");
-        const gitignoreLines = gitignoreData
-            .split("\n")
-            .map((line) => line.trim())
-            .filter((line) => !!line && !line.startsWith("#"));
+        const gitignoreLines = parseIgnoreFile(gitignorePath);
         options.ignore.push(...gitignoreLines);
     }
 
     // Read the contents of the user's .consoleLogIgnorer file (if it exists)
     const consoleLogIgnorerPath = `${process.cwd()}/.logignore`;
     if (fs.existsSync(consoleLogIgnorerPath)) {
-        const consoleLogIgnorerData = fs.readFileSync(consoleLogIgnorerPath, "utf8");
-        const consoleLogIgnorerLines = consoleLogIgnorerData
-            .split("\n")
-            .map((line) => line.trim())
-            .filter((line) => !!line && !line.startsWith("#"));
+        const consoleLogIgnorerLines = parseIgnoreFile(consoleLogIgnorerPath);
         options.ignore.push(...consoleLogIgnorerLines);
     }
 
